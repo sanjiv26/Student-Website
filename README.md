@@ -40,7 +40,6 @@
  * Notepad++
  * Visual Studio Code
  * Xampp
- * Google Chrome
 
  # <a name = "#cdn"></a>CDN
 * "https://getbootstrap.com/docs/4.6/getting-started/introduction/"
