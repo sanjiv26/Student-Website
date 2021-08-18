@@ -1,26 +1,26 @@
-#!C:/Users/---your name----/AppData/Local/Programs/Python/Python39/python.exe
+#!C:/Users/---your name---/AppData/Local/Programs/Python/Python39/python.exe
 print("Content-type: text/html\n")
 
 #importing common gateway interface,sql
 import cgi,pymysql,cgitb;cgitb.enable()
 conn = pymysql.connect(host = "localhost",user="root",password = "",database="student")
 cur = conn.cursor()
+#getting field data from form
 f = cgi.FieldStorage()
-id  = f.getvalue("id")
-
-q = """select * from studentdetails where accept = 'New'"""
+sid = f.getvalue("sid")
+q ="""select * from newstudents where accept='new'"""
 cur.execute(q)
 r = cur.fetchall()
-cnt = 0
-#updating details
-if id != None:
-    q1 = """update studentdetails set accept='Verified' where id = '%s'"""%(id)
+if sid!=None:
+    q1="""update studentdetails set accept='Verified' where id=%s"""%(sid)
     cur.execute(q1)
     conn.commit()
-#alert after completion
+    #alert when accepted
     print("""
         <script>
-            alert("Request accepted");
-            location.href = "adminstudentdetails.py";
-        </script>
-    """)
+          alert("Request accepted");
+          location.href="adminstudentdetails.py";
+          </script>
+         """)
+
+conn.close()
