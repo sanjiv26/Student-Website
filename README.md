@@ -24,7 +24,7 @@
                      is a correction in it . They can accept or remove newly registered students .
                      
         
-  * **Forget Password** - There is a forget password option in both the login pages to reset the password .
+  * **Forget Password** - There is a forget password option in both the login pages to know the password .
                           This is done through email . 
   
  # <a name = "#requirements"></a>Requirements
